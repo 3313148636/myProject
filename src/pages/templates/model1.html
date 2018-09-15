@@ -1,0 +1,25 @@
+
+<script type="text/html" id="model1">
+	<div class="col-xs-12">
+		<ul>
+			<%for(var i=0; i<list.length; i++){%>
+				<%var str = "";if(i==0){str = "li1";}%>
+			<li class="<%=str%>">
+				<a href="#" hidefocus="true">
+					<img src="<%=list[i].src%>">
+					<div class="oDiv">
+						<span class="price">
+							<span class="unit">￥</span><%=list[i].money1%><span class="tiny">.<%=list[i].money2%></span>
+						</span>
+						<span class="discount"><%=list[i].count%>折包邮</span>
+					</div>
+					<div class="top-icon">
+						<p><%=list[i].type%></p>
+						<p>TOP</p>
+					</div>
+				</a>
+			</li>
+			<%}%>
+		</ul>
+	</div>
+</script>

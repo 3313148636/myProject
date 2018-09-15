@@ -1,0 +1,8 @@
+@mixin opacity($val) {
+    opacity: $val/100;
+    fill:alpha(opacity=$val);
+}
+@mixin margin_padding{
+    margin:0;
+    padding:0;     
+}

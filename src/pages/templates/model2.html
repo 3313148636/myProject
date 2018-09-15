@@ -1,0 +1,30 @@
+<script type="text/html" id="model2">
+	<%for(var i=0; i<list.length; i++){%>
+	<a href="#" class="singel-item" hidefocus="true">
+		<div class="inner-item">
+			<div class="promo-img">
+				<img data-original="<%=list[i].img%>" class="lazy" width="220" height="220" />
+				<div class="mask-img"></div>
+				<div class="intro-text">
+					<%=list[i].title%> 
+				</div>
+			</div>
+			<div class="item-sale-info">
+				<span class="item-price-info">
+					<em class="unit">¥</em>
+					<em class="big"><%=list[i].price/10%></em>
+					<em class="tiny">.90</em>
+				</span>
+				<div class="discount">
+					<span class="discount-icon"><%=list[i].sale_tip%></span>
+					<span class="org-price"><s> ￥<%=list[i].price_ori/10%> </s></span>
+				</div>
+				<span class="buy-info">
+					<span class="people-num">29568</span>人已开抢
+				</span>
+				<span class="go-buy">去抢购</span>
+			</div>
+		</div>
+	</a>
+	<%}%>
+</script>

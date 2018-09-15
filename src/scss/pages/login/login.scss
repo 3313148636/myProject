@@ -1,0 +1,421 @@
+@import "../../mixins/mixin.scss";
+#_header_top{
+    background:#F4F4F4;
+    height:27px;
+    width:1010px;
+    margin: 0 auto;
+    .col-xs-4{
+        height:27px; 
+        padding-left: 5px;
+        ul{
+            float: left;
+            position: relative;
+            width: 92px;
+            @include margin_padding;
+            li{
+                list-style: none;
+                padding-top: 2px;
+                padding-left: 20px;
+                padding-bottom: 4px;
+                a{
+                    color: #666;
+                    font-size: 12px;
+                    padding-right:10px;
+                    text-decoration: none;
+                    span{
+                        padding: 0 7px 0 5px;
+                    }
+                }
+            }
+            .li1{
+                border:1px solid #F4F4F4;
+                background: url(http://s0.husor.cn/image/index/icons1.png) no-repeat -16px -646px;
+            }
+            .li1_1{
+                border:1px solid #C1C1C1;
+                border-bottom: none;
+                background: #fafafa url(http://s0.husor.cn/image/index/icons1.png) no-repeat -16px -646px;
+            }
+            .li2{
+                background: url(http://s0.husor.cn/image/index/icons1.png) no-repeat -16px -685px;
+                top: 27px;
+                z-index: 5;
+                position: absolute;
+                border-left:1px solid #C1C1C1;
+                border-right:1px solid #C1C1C1;
+                background-color: #fafafa;
+                padding-bottom:4px; 
+                display: none; 
+            }
+            .li3{
+                background: url(http://s0.husor.cn/image/index/icons1.png) no-repeat -16px -721px;                
+                top: 53px;
+                z-index: 5;
+                position: absolute;
+                border-left:1px solid #C1C1C1;
+                border-right:1px solid #C1C1C1;
+                border-bottom:1px solid #C1C1C1;
+                background-color: #fafafa;
+                padding-bottom:4px;  
+                display: none; 
+            }
+        }
+        #_header_span{
+            border-left:1px solid #ccc;
+            margin-left: 20px;
+            a{
+                display: inline-block;
+                margin-top:6px;
+                padding-left: 11px;
+                padding-right: 18px;
+                color: #666;
+                font-size: 12px;
+                text-decoration: none;
+            }
+        }
+        #_header_span_{
+            a{
+                color: #FF6600;
+                text-decoration: none;
+                font-size: 12px;
+                padding-right:45px;
+                padding-top:2px;
+                background: url(http://s0.mizhe.cn/image/index/reg-reward-icon.png) no-repeat right center;
+            }
+        }
+    }
+    .col-xs-6{
+        height:24px;
+        padding-top:3px;
+        padding-right: 0;
+        
+        span{
+            border-right:1px solid #CCC;
+        }
+        a{
+            text-decoration: none;
+            color: #666;
+            font-size: 12px;
+            padding-right: 10px;
+            padding-left:10px;
+        }
+        ._span1{
+            background: url("http://s0.mizhe.cn/image/index/shouji3.jpg") no-repeat 7px -3px;            
+            a{
+                padding-left: 20px;
+            }
+        }
+        #notice_container{
+            position: relative;
+            top: -24px;
+            min-height: 30px;
+            width: 71px;
+            float: right;
+            ._span2{
+                background: url(http://s0.husor.cn/image/index/icons1.png) no-repeat -56px -647px;
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 0;
+                padding: 2px 23px 4px 0px;
+                border: 1px solid #F4F4F4;
+                border-bottom: none;
+                z-index: 2;
+            }
+            #watch-wrap{
+                display: none;
+                position: absolute;
+                top: 26px;
+                right: 0px;
+                width:168px;
+                height:148px;
+                overflow: hidden;
+                border: 1px solid #ccc;
+                background-color: #fafafa;
+                z-index: 1;
+                .weixin-wrap{
+                    float: left;
+                    height: 130px;
+                    width: 100px;
+                    overflow: hidden;
+                    margin-top: 10px;
+                    border-right: 1px solid #eee;
+                    text-align: center;
+                    padding-right: 8px;
+                    img{
+                        width: 80px;
+                        height: 80px;
+                        margin-bottom: 7px;
+                    }
+                }
+                .right-part{
+                    float: right;
+                    padding-top: 10px;
+                }
+            }
+        }
+    }
+}
+#_header_bottom{
+    height:70px;
+    width:1010px;
+    margin:0 auto;
+    .col-xs-3{
+        padding-left: 0;
+    }
+    .col-xs-5{
+        margin-top: 7px;
+        margin-left: 20px;
+    }
+}
+#nav{
+    height:40px;
+    background: #FF6600;
+    .col-xs-12{ 
+        ul{
+            width:1010px;
+            background: #FF6600;
+            margin: 0 auto;
+            list-style: none;
+            padding-left:0;
+            overflow: hidden;
+            li{
+                line-height: 40px;
+                padding: 0 16px 0 16px;
+                float: left;
+                &:hover{
+                    background:#DD4400;
+                    @include opacity(50);
+                }
+                a{
+                    color: #fff;
+                    font-size: 14px;
+                    text-decoration: none;
+                }
+            }
+            .nav_li1{
+                background:#DD4400;
+            }
+            .nav_li2{
+                float: right;
+            }
+        }
+    }
+}
+._body_container{
+    background-color:#F4F4F4;
+    overflow: hidden;
+    #_body{
+        width: 1010px;
+        margin: 20px auto 30px;
+        background-color: #fff;
+        overflow: hidden;
+        .col-xs-8{
+            padding-left: 80px;
+            padding-bottom: 60px;
+            position: relative;
+            .page-header{
+                border-bottom: none;
+                h3{
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+            }
+            .form-horizontal{
+                width: 380px;
+                .form-group{
+                    .control-label{
+                        text-align: right;
+                        font-size: 12px;
+                        line-height: 20px;
+                        padding-right: 0;
+                        color: #444;
+                        font-weight: 100;
+                    }
+                    .form-control-container{
+                        padding-left: 3px;
+                        .form-control{
+                            padding:2px 5px;
+                            height: 30px;
+                            &:focus{
+                                outline:none;
+                                border-color: #ccc;
+                                box-shadow: inset 0 1px 1px rgba(0,0,0,.075);;
+                            }
+                        }
+                    }
+                    .checkimg-container{
+                        padding-left: 10px;
+                        .change-checkcode{
+                            font-size: 12px;
+                            position: relative;
+                            top: 7px;
+                            left: 5px;
+                            cursor: pointer;
+                        }
+                    }
+                    .check_btn{
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        height: 30px;
+                        width: 100px;
+                        margin-left: 20px;
+                        background-color: #eee;
+                        text-align: center;
+                        padding: 0;
+                        line-height: 30px;
+                        a{
+                            padding: 0;
+                            font-size: 12px;
+                            color: #444;
+                            margin-top: -2px;
+                        }
+                    }
+                }
+                .law-text{
+                    font-size: 12px;
+                    padding:10px 0 10px 90px;
+                    color: #bbb;
+                    a{
+                        color: #444;
+                        text-decoration: none;
+                    }
+                }
+                .zhuce_btn{
+                    display: block;
+                    width: 100px;
+                    height: 35px;
+                    background: #FF6600;
+                    border-radius: 5px;
+                    margin-left: 90px;
+                    line-height: 35px;
+                    text-align: center;
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+            .check{
+                position: absolute;
+                left: 470px;
+                top: 99px;
+                p{
+                    margin-bottom: 0;
+                    visibility: hidden;
+                    span{
+                        border: 1px solid #EAEAEA;
+                        display: inline-block;
+                        padding: 1px 15px 1px 30px;
+                        border-radius: 3px;
+                        color: #D53939;
+                        margin-bottom:21px; 
+                        background: url('http://s1.mizhe.cn/image/seller/cuo.png') no-repeat 8px center;
+                    }
+                }
+            }
+        }
+        .col-xs-3{
+            background: url(http://s0.husor.cn/image/tj_split.png) no-repeat scroll 15px 35px #fff;
+            padding-left:50px; 
+            padding-bottom: 50px;
+            .title{
+                font-size: 12px;
+                text-align: center;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                color: #222;
+                margin: 0;
+            }
+            .link-login{
+                display: block;
+                width: 108px;
+                height: 30px;
+                background: #78B12C;
+                border-radius: 5px;
+                line-height: 30px;
+                text-align: center;
+                color: #fff;
+                text-decoration: none;
+                margin-left: 37px;
+                margin-bottom: 50px;
+                font-size: 16px;
+                font-weight: bold;
+            }
+			.n-text{
+                font-size: 12px;
+                text-align: center;
+                color: #333;
+            }
+            ul{
+                list-style-type: none;
+                padding-left: 31px;
+                li{
+                    border-radius: 5px;
+                    border: 1px solid #ddd;
+                    width: 120px;
+                    height: 26px;
+                    margin: 8px 0;
+                    text-align: right;
+                    line-height: 25px;
+                    padding-right: 8px;
+                    a{
+                        font-size: 12px;
+                        display: block;
+                        height: 25px;
+                        text-decoration: none;
+                    }
+                    .qq-conn{
+                        background: url(http://s0.husor.cn/image/icons/icons-m.png) no-repeat 8px -25px;
+                    }
+                    .sina-conn{
+                        background: url(http://s0.husor.cn/image/icons/icons-m.png) no-repeat 6px -150px;
+                    }
+                    .taobao-conn{
+                        background: url(http://s0.husor.cn/image/icons/icons-m.png) no-repeat 6px -100px;
+                    }
+                }
+            }
+            .downloadApp{
+                margin-top: 50px;
+                color: #777;
+                text-align: center;
+                p{
+                    text-align: center;
+                    margin-bottom:7px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+.footer-container{
+    overflow: hidden;
+    .wrapper{
+        width: 1010px;
+        margin: 15px auto 0;
+        text-align: center;
+        .footer-nav{
+            a{
+                text-decoration: none;
+                color: #444;
+                padding: 0 5px;
+            }
+        }
+        .cert{
+            margin-top: 5px;
+            a{
+                margin-right: 9px;
+                img{
+                    height: 41px;
+                }
+            }
+        }
+        .copyright{
+            color: #555;
+            margin-top: 10px;
+            a{
+                color: #555;
+                text-decoration: none;
+            }
+        }
+    }
+}

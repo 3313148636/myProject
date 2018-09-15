@@ -1,0 +1,6 @@
+@function white($alpha){
+    @return rgba(255,255,255,$alpha/100);
+}
+@function black($alpha){
+    @return rgba(0,0,0,$alpha/100);
+}

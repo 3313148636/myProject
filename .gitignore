@@ -1,0 +1,4 @@
+#忽略node相关软件
+node_modules/
+#忽略生成目录
+dist/
