@@ -3,7 +3,7 @@
 	<a href="#" class="singel-item" hidefocus="true">
 		<div class="inner-item">
 			<div class="promo-img">
-				<img data-original="<%=list[i].img%>" class="lazy" width="220" height="220" />
+				<img data-original="<%=list[i].img%>" class="lazy" width="220" height="220" alt="<%=list[i].iid%>" />
 				<div class="mask-img"></div>
 				<div class="intro-text">
 					<%=list[i].title%> 
@@ -22,7 +22,7 @@
 				<span class="buy-info">
 					<span class="people-num">29568</span>人已开抢
 				</span>
-				<span class="go-buy">去抢购</span>
+				<span class="go-buy" iid="<%=list[i].iid%>">去抢购</span>
 			</div>
 		</div>
 	</a>

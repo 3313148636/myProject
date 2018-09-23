@@ -1,0 +1,61 @@
+<script type="text/html" id="fixed_model">
+    <ul class="side-box-lists">
+        <li class="li li1" id="gwc_con">
+            <div class="gwc">
+                <div class="top-title-bar">
+                    <img src="../../imgs/fixed_13.jpg" /><span class="cart-title">购物车</span>
+                </div>
+                <ul class="cart-item-lists no-item" id="goods_che">
+                    <%var money = 0;%>
+                    <%if(shop_list[0].mxw == 0){%>
+                    <p class="no-item-text">赶紧去挑选商品吧！</p>
+                    <%}else{%>
+                        <%for(var i=1; i<shop_list.length; i++){%>
+                            <% money += shop_list[i].sum_money;%>
+                        <li>
+                            <div class="li_left"><img src="<%=shop_list[i].src%>" class="img-thumbnail"></div>
+                            <div class="li_center">
+                                <p class="li_center_up"><%=shop_list[i].title%></p>
+                                <p class="li_center_down">颜色:<%=shop_list[i].color%> 尺码:<%=shop_list[i].size%></p>
+                            </div>
+                            <div class="li_right">
+                                <p class="li_right_up">￥<%=shop_list[i].money%></p>
+                                <p class="li_right_down">x<%=shop_list[i].num%></p>
+                            </div>
+                        </li>
+                        <%}%>
+                    <%}%>
+                </ul>
+                <div class="foot-box">
+                    <div class="total-box">
+                        <%
+                            var str = money.toString();
+                            var num = 0;
+                            for(var i=0;i<str.length; i++){
+                                if(str[i] == '.'){
+                                    num = i;
+                                    break;
+                                }
+                            }
+                        %>
+                        <span class="cal-text">小计：</span><span class="subtotal-money">¥<%=str.slice(0,num+3)%></span>
+                    </div>
+                    <%if(shop_list[0].mxw == 0){%>
+                        <a class="cart-link-btn" href="http://localhost:8080/pages/regist/regist.html">去结算</a>
+                    <%}else{%>
+                        <a class="cart-link-btn" href="http://localhost:8080/pages/cart/cart.html">去结算</a>
+                    <%}%>
+                </div>
+            </div>
+        </li>
+        <li class="li li2">
+            <div class="phoneApp">
+                <p>下载手机APP</p>
+                <p>随时随地看上新</p>
+                <img class="qrcode-img" src="http://s0.husor.cn/image/download_qr_code1.png">
+            </div>
+        </li>
+        <li class="li li3"><p>客服在线</p></li>
+        <li class="li last"></li>
+    </ul>
+</script>

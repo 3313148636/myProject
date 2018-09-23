@@ -1,0 +1,195 @@
+<script type="text/html" id="detail_model">
+    <div class="row" id="detail_body_nav">
+        <p>首页 > 限量购 > <span><%=list.title%></span></p>
+    </div>
+    <div class="row" id="detail_body_top">
+        <div class="col-xs-5 detail_body_top_left">
+            <div class="top">
+                <img src="<%=list.main_img%>" alt="" id="main_img">
+            </div>
+            <div class="bottom">
+                <span id="zuojian" class="glyphicon glyphicon-chevron-left"></span>
+                <span id="youjian" class="glyphicon glyphicon-chevron-right"></span>
+                <div class="img_left_move">
+                    <ul class="view-ThumbList" style="left:0px;">
+                        <%for(var j in list.imgs){%>
+                        <li>
+                            <a href="javascript:;">
+                                <img class="img-thumbnail" src="<%=list.imgs[j]%>">
+                            </a>
+                        </li>
+                        <%}%>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-7 detail_body_top_right">
+            <p class="p1">今日特卖<span><%=list.title%></span></p>
+            <p class="p2"><%=list.desc%></p>
+            <div class="info">
+                <div class="p11"><span class="money">￥</span><span><%=list.price/100%></span></div>
+                <div class="p21 p31">
+                    <p class="price">参考价</p>
+                    <p><del><%=list.origin_price/100%></del></p>
+                </div>
+                <div class="p21">
+                    <p class="price">折扣</p>
+                    <%var x= (list.price/list.origin_price*10).toString() %>
+                    <p><%=x[0]+x[1]+x[2]%>折</p>
+                </div>
+                <div class="p21 p41">
+                    <p class="price">您节省了</p>
+                    <p><%=(list.origin_price-list.price)/100+"0"%></p>
+                </div>
+                <img class="deco-img" src="http://s1.husor.cn/image/limitbuy/sside1.png">
+            </div>
+        
+            <div class="info-container">
+                <div id="infomation">请选择你要的商品信息</div>
+                <div class="yunfei">运费<span>包邮（偏远地区除外）</span></div>
+                <div class="color">
+                    <p>颜色</p>
+                    <div class="colornum">
+                        <ul>
+                            <% var color=list.sku.sku_id_map[3];%>
+                            <%for(var k=0; k<color.length; k++){%>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <img src="<%=list.imgs[color[k]]%>" />
+                                    <span><%=list.sku.sku_kv_map['v'+color[k]]%></span>
+                                </a>
+                                <i>
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </i>
+                            </li>
+                            <%}%>
+                        </ul>
+                    </div> 
+                </div>
+                <div class="size">
+                    <p>尺码</p>
+                    <ul>
+                        <%var size = list.sku.sku_id_map[161]%>
+                        <%for(var i=0;i<size.length; i++){%>
+                        <li>
+                            <span><%=list.sku.sku_kv_map['v'+size[i]]%></span>
+                            <i><span class="glyphicon glyphicon-ok"></span></i>
+                        </li>
+                        <%}%>
+                        <li class="last" id="last_table">查看尺码表</li>
+                    </ul>
+                    <!--模态窗口-->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                        &times;
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="size_table_1">
+                                        <caption align="top">
+                                            <span class="left">尺码对照表</span>
+                                            <span class="right">单位：CM</span>
+                                        </caption>
+                                        
+                                        <tr class="tr_1">
+                                            <th>尺码</th>
+                                            <%for(var i=0;i<list.product_sizes[0].sizes.length;i++){%>
+                                            <th><%=list.product_sizes[0].sizes[i].key%></th>
+                                            <%}%>
+                                        </tr>
+                                        <%for(var i=0;i<list.product_sizes.length;i++){%>
+                                        <tr>
+                                            <td><%=list.sku.sku_kv_map['v'+list.product_sizes[i].vid]%></td>
+                                            <%for(var j=0;j<list.product_sizes[0].sizes.length;j++){%>
+                                            <td><%=list.product_sizes[i].sizes[j].value%></td>
+                                            <%}%>
+                                        </tr>
+                                        <%}%>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buynum">
+                    <p>购买数量</p>
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon" id="remove">-</div>
+                                <input type="text" disabled="disabled" class="form-control" id="exampleInputAmount" value="1">
+                                <div class="input-group-addon" id="add">+</div>
+                            </div>
+                        </div>
+                    </form>
+                    <p style="margin-left:5px; margin-right:15px; font-size:13px;">件</p>
+                    <p id="xiangou">每人限购5件</p>
+                </div>
+                <a class="btn" id="shopping_che"><img src="../../imgs/shopping.jpg"/>立即抢购</a>
+                <a class="btn btn_1" id="shopping_che1">立即结算</a>
+                <a class="btn btn_2" id="shopping_che2">继续购物</a>
+                <i></i>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="detail_body_center">
+        <div class="col-xs-10">
+            <ul class="nav-menu clearfix">
+                <li class="current">商品详情</li>
+                <li class="" id="buyer_kou">买家口碑<span class="comments-num"></span></li>
+                <li class="">商品咨询</li>
+                <li class="">米折优势</li>
+            </ul>
+            <p class="goods_canshu">
+                <span class="goods_canshu_span1"></span><span>商品参数</span>
+            </p>
+            <div id="table_container">
+                <table border="1" width="600">
+                    <%for(var i=0; i<list.product_props.length; i++){%>
+                    <tr>
+                        <td width="230" style="padding:3px 0 3px 20px;color:#777; font-size:13px;"><%=list.product_props[i].prop_name%></td>
+                        <td width="330" style="padding:3px 0 3px 20px;color:#777;font-size:13px;"><%=list.product_props[i].prop_value%></td>
+                    </tr>
+                    <%}%>
+                </table>
+            </div>
+            <p class="goods_canshu">
+                <span class="goods_canshu_span1"></span><span>商品尺码</span>
+            </p>
+            <div class="tips">
+                <p>TIPS</p>
+                <p>1.请综合参考尺码表各项参数进行选购，以帮助您选择到更合适的尺码。</p>
+                <p>2.米折 “7天无理由退货” 为您的购物做保障，请放心挑选尺码。</p>
+            </div>
+            <div class="size_table_container">
+                <table class="size_table_1">
+                    <caption align="top">
+                        <span class="left">尺码对照表</span>
+                        <span class="right">单位：CM</span>
+                    </caption>
+                    <tr class="tr_1">
+                        <th>尺码</th>
+                        <%for(var i=0;i<list.product_sizes[0].sizes.length;i++){%>
+                        <th><%=list.product_sizes[0].sizes[i].key%></th>
+                        <%}%>
+                    </tr>
+                    <%for(var i=0;i<list.product_sizes.length;i++){%>
+                    <tr>
+                        <td><%=list.sku.sku_kv_map['v'+list.product_sizes[i].vid]%></td>
+                        <%for(var j=0;j<list.product_sizes[0].sizes.length;j++){%>
+                        <td><%=list.product_sizes[i].sizes[j].value%></td>
+                        <%}%>
+                    </tr>
+                    <%}%>
+                </table>
+            </div>
+            <div id="commit">
+                
+            </div>
+        </div>
+    </div>
+</script>

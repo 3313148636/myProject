@@ -59,6 +59,43 @@
                 padding-bottom:4px;  
                 display: none; 
             }
+            #_header_span{
+                border-left:1px solid #ccc;
+                margin-left: 20px;
+                a{
+                    display: inline-block;
+                    margin-top:6px;
+                    padding-left: 11px;
+                    padding-right: 18px;
+                    color: #666;
+                    font-size: 12px;
+                    text-decoration: none;
+                }
+            }
+            #_header_span_{
+                a{
+                    color: #FF6600;
+                    text-decoration: none;
+                    font-size: 12px;
+                    padding-right:45px;
+                    padding-top:2px;
+                    background: url(http://s0.mizhe.cn/image/index/reg-reward-icon.png) no-repeat right center;
+                }
+            }
+            p{
+                font-size: 12px;
+                margin: 0;
+                line-height: 28px;
+                .span1,.span3{
+                    text-decoration: none;
+                    color: #444;
+                }
+                .span2 span{
+                    background: url("http://s0.husor.cn/image/icons/grade.png") no-repeat left center;
+                    display: inline-block;
+                    padding: 5px 8px;
+                }
+            }
         }
         #_header_span{
             border-left:1px solid #ccc;
@@ -81,6 +118,20 @@
                 padding-right:45px;
                 padding-top:2px;
                 background: url(http://s0.mizhe.cn/image/index/reg-reward-icon.png) no-repeat right center;
+            }
+        }
+        p{
+            font-size: 12px;
+            margin: 0;
+            line-height: 28px;
+            .span1,.span3{
+                text-decoration: none;
+                color: #444;
+            }
+            .span2 span{
+                background: url("http://s0.husor.cn/image/icons/grade.png") no-repeat left center;
+                display: inline-block;
+                padding: 5px 8px;
             }
         }
     }
@@ -171,6 +222,8 @@
 #nav{
     height:40px;
     background: #FF6600;
+    padding: 0;
+    margin: 0;
     .col-xs-12{ 
         ul{
             width:1010px;

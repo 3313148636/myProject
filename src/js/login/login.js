@@ -1,43 +1,53 @@
 require(["../conf/config"], function () {
     require(["jquery", "bootstrap", "template","lazyload","cookie"], function ($, boot, template,lazyload) {
-        // $("#model_1").load("http://localhost:8080/pages/templates/model1.html",function(){
-        //     $.ajax({
-        //         url: "http://localhost:8080/json_data/goods.json",
-        //         dataType: "json",
-        //         success: function (data) {
-        //             var tempstr = template("model1", {
-        //                 list: data
-        //             });
-        //             $("#_body_center_header").html(tempstr);
-        //         }
-        //     })
-        // });
-        
-        //登录方式
-        $("#_header_top .col-xs-4 ul").on("mouseover",function(){
-            $("#_header_top .col-xs-4 ul li").eq(0).addClass("li1_1");
-            $("#_header_top .col-xs-4 ul li").eq(1).show();
-            $("#_header_top .col-xs-4 ul li").eq(2).show();
-            $(this).on("mousemove","li",function(){
-                $(this).css("backgroundColor","#ddd");
+         //模板三 刷新首部菜单项
+         $("#model_3").load("http://localhost:8080/pages/templates/model3.html",function(){
+            var str = $.cookie('demo');
+            if(str === undefined){
+                flag = 1;
+            }else{
+                var name = JSON.parse(str).username;
+                var name_str = name.slice(0,3)+"****"+name.slice(-4);
+                flag = name_str;
+            }
+            var tempstr = template("model3",{data:flag});
+            $("#_header_top").html(tempstr);
+            //登录方式
+            $("#_header_top .col-xs-4 ul").on("mouseover",function(){
+                $("#_header_top .col-xs-4 ul li").eq(0).addClass("li1_1");
+                $("#_header_top .col-xs-4 ul li").eq(1).show();
+                $("#_header_top .col-xs-4 ul li").eq(2).show();
+                $(this).on("mousemove","li",function(){
+                    $(this).css("backgroundColor","#ddd");
+                })
+                $(this).on("mouseout","li",function(){
+                    $(this).css("backgroundColor","#fafafa");
+                })
             })
-            $(this).on("mouseout","li",function(){
-                $(this).css("backgroundColor","#fafafa");
+            $("#_header_top .col-xs-4 ul").on("mouseout",function(){
+                $("#_header_top .col-xs-4 ul li").eq(0).removeClass("li1_1");
+                $("#_header_top .col-xs-4 ul li").eq(1).hide();
+                $("#_header_top .col-xs-4 ul li").eq(2).hide();
             })
-        })
-        $("#_header_top .col-xs-4 ul").on("mouseout",function(){
-            $("#_header_top .col-xs-4 ul li").eq(0).removeClass("li1_1");
-            $("#_header_top .col-xs-4 ul li").eq(1).hide();
-            $("#_header_top .col-xs-4 ul li").eq(2).hide();
-        })
-        //关注
-        $("#notice_container").hover(function(){
-            $("#watch-wrap").show();
-            $("#notice").css({"backgroundColor":"#fafafa","borderColor":"#ccc"});
-        },function(){
-            $("#watch-wrap").hide();
-            $("#notice").css({"backgroundColor":"#f4f4f4","borderColor":"#F4F4F4"});
-        })
+            //关注
+            $("#notice_container").hover(function(){
+                $("#watch-wrap").show();
+                $("#notice").css({"backgroundColor":"#fafafa","borderColor":"#ccc"});
+                },function(){
+                $("#watch-wrap").hide();
+                $("#notice").css({"backgroundColor":"#f4f4f4","borderColor":"#F4F4F4"});
+            })
+            //退出登录
+            $("#logout").click(function(){
+                $.cookie('demo', '', { expires: -1 ,path:"/" });
+                window.location.replace("http://localhost:8080/index.html");
+            })
+        });
+        //模板七 刷新底部模块
+        $("#model_7").load("http://localhost:8080/pages/templates/model7.html",function(){
+            var tempstr = template("model7");
+            $(".footer-container").html(tempstr);
+        });
         //验证码
         $(".change-checkcode").on("click",function(){
             $(".checkimg").get(0).src = "http://d.mizhe.com/checkcode/show2.html";
@@ -94,11 +104,11 @@ require(["../conf/config"], function () {
             }
             if(demo){
                 var str= JSON.stringify({"username":formArr[0].value,"password":formArr[3].value});
-                $.cookie("demo",str);
-                window.location.replace("http://localhost:8080/index.html");
+                $.cookie("regist",str,{expires: 1, path: '/' });
+                window.location.replace("http://localhost:8080/pages/regist/regist.html");
             }
         })
-        
+        //验证手机
         function checkPhone(ele){ 
             var phone = ele.value;
             if(!(/^1(3|4|5|7|8)\d{9}$/.test(phone))){   

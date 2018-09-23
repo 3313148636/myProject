@@ -13,9 +13,9 @@ gulp.task("build",()=>{
     .pipe(gulp.dest("./dist"))//复制到制定文件夹
 
     //压缩css并复制到dist文件夹
-    // gulp.src("./src/**/*.css")//读取css
-    // .pipe(minifyCSS())//压缩处理
-    // .pipe(gulp.dest("./dist"))//复制到制定文件夹
+    gulp.src("./src/**/*.css")//读取css
+    .pipe(minifyCSS())//压缩处理
+    .pipe(gulp.dest("./dist"))//复制到制定文件夹
 
     gulp.src("./src/**/*.scss")//读取scss
     .pipe(sass({
@@ -35,13 +35,13 @@ gulp.task("refreshHtml",()=>{
     .pipe(connect.reload());
 })
 
-// gulp.task("refreshCss",()=>{
-//     gulp.src("./src/**/*.css")
-//     .pipe(minifyCSS())
-//     .pipe(gulp.dest("./dist"))
-// })
-
 gulp.task("refreshCss",()=>{
+    gulp.src("./src/**/*.css")
+    .pipe(minifyCSS())
+    .pipe(gulp.dest("./dist"))
+})
+
+gulp.task("refreshScss",()=>{
     gulp.src("./src/**/*.scss")
     .pipe(sass({
         outputStyle : "expanded"
@@ -69,6 +69,7 @@ gulp.task("server",()=>{
     })
 
     gulp.watch("./src/**/*.html",["refreshHtml"]);
-    gulp.watch("./src/**/*.scss",["refreshCss","refreshHtml"]);
+    gulp.watch("./src/**/*.css",["refreshCss","refreshHtml"]);
+    gulp.watch("./src/**/*.scss",["refreshScss","refreshHtml"]);
     gulp.watch("./src/**/*.js",["refreshJs","refreshHtml"]);
 })

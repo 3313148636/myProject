@@ -1,0 +1,91 @@
+<script type="text/html" id="commit_model">
+    <div class="mjkb">
+        买家口碑
+        <span>本商品由唯景发货并提供售后服务</span>
+    </div>
+    <div class="commit_top">
+        <div class="commit_top_body">
+            <div class="commit-left">
+                <p class="pp1">商品满意度</p>
+                <p class="pp2"><%=list.score%></p>
+                <p class="pp3">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                </p>
+            </div>
+            <div class="commit-right">
+                <p class="pp1"><%=list.score%><span></span></p>
+                <p class="pp2"><span class="pp2_span1"></span><span class="pp2_span2"></span><span class="pp2_span3"></span><span class="pp2_span4"></span><span class="pp2_span5"></span></p>
+                <p class="pp3"><span>很不满意</span><span>不满意</span><span>一般</span><span>满意</span><span>很满意</span></p>
+            </div>
+        </div>
+        <div class="commit_body">
+            <p class="nav"><input type="radio" checked="checked" /><span>全部（<%=list.total_rate_rows%>）</span></p>
+            <%for(var i=0;i<list.comments.length;i++){%>
+            <div class="commit_list">
+                <p class="commit_body_left">
+                    <%=list.comments[i].comment%>
+                </p>
+                <p class="commit_body_center">
+                    <%
+                        var str = list.comments[i].sku_properties;
+                        var num1=0,num2=0,num3=0;
+                        for(var j=0;j<str.length;j++){
+                            if(str[j]=='颜'){
+                                num1=j;
+                            }
+                            if(str[j]==';'){
+                                num2=j;
+                            }
+                            if(str[j]=='码'){
+                                num3=j;
+                            }
+                        }
+                        var color = '',size='',size1='';
+                        for(var k=num1+2;k<num2;k++){
+                            color += str[k];
+                        }
+                        for(var k=num2+4;k<num3-2;k++){
+                            size += str[k];
+                        }
+                        for(var k=num3+1;k<str.length;k++){
+                            size1 += str[k];
+                        }
+                    %>
+                    <span>颜色:<%=color%>【<%=size%>】</span><br>
+                    <span>尺码:<%=size1%></span>
+                </p>
+                <p class="commit_body_right">
+                    <span><%=list.comments[i].display_name%></span><br>
+                    <%for(var k=0;k<list.comments[i].rate_star;k++){%>
+                    <span class="glyphicon glyphicon-star" style="color:#FF6600"></span>
+                    <%}%>
+                    <%for(var k=list.comments[i].rate_star;k<5;k++){%>
+                    <span class="glyphicon glyphicon-star" style="color:#D0D0D0"></span>
+                    <%}%>
+                </p>
+            </div>
+            <%}%>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="commit_fenye">
+    <div id="commit_fenye">
+        <div id="commit_left" style="display:none">
+            < 上一页
+        </div>
+        <div id="ul_overflow">
+            <p style="left:0px;">
+                <%for(var i=0; i<list.total_rate_rows/10; i++){%>
+                <span><%=i+1%></span>
+                <%}%>
+            </p>
+        </div>
+        <div id="commit_right">
+            下一页 >
+        </div>
+    </div>
+</script>

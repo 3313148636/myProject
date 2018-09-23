@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+
+    <link href="../../scss/pages/bootscrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../scss/pages/cart/cart.css">
+    <link rel="stylesheet" href="../../scss/pages/cart/carts.css">
+    <link rel="stylesheet" href="../../scss/pages/cart/reset.css">
+
+    <script src="../../js/lib/jquery.min.js"></script>
+    <script src="../../js/lib/template-web.js"></script>
+    <script src="../../js/lib/jquery.cookie.js"></script>
+</head>
+<body>
+    <div class="container-fuild" style="background:#F4F4F4;">
+        <div class="row" id="_header_top">
+            <div class="col-xs-4">
+                
+            </div>
+        </div>
+    </div>
+    <div class="container-fuild">
+        <div class="row" id="_header_bottom">
+            
+        </div>
+        <div class="row" id="nav">
+            
+        </div>
+    </div>
+    <!-- 商品列表 -->
+    <div class="container-fuild" id="shop_list_container">
+    
+    </div>
+    <div class="container-fuild footer-container">
+		
+    </div>  
+
+    <div id="model_3"></div>
+    <div id="model_4"></div>
+    <div id="model_5"></div>
+    <div id="model_7"></div>
+
+    <script type="text/html" id="shop_list_model">
+        <div class="row" id="myCart">
+            <p>我的购物车</p>
+            <i>&nbsp;</i>
+        </div>
+        <div class="row" id="shop_list">
+            <section class="cartMain">
+                <div class="cartMain_hd">
+                    <ul class="order_lists cartTop">
+                        <li class="list_chk">
+                            <input type="checkbox" id="all" class="whole_check">
+                            <label for="all"></label>
+                            全选
+                        </li>
+                        <li class="list_con">商品信息</li>
+                        <li class="list_info">商品参数</li>
+                        <li class="list_price">单价</li>
+                        <li class="list_amount">数量</li>
+                        <li class="list_sum">金额</li>
+                        <li class="list_op">操作</li>
+                    </ul>
+                </div>
+                
+                <div class="cartBox">
+                    <div class="shop_info">
+                        <div class="all_check">
+                            <input type="checkbox" id="shop_c" class="shopChoice">
+                            <label for="shop_c" class="shop"></label>
+                        </div>
+                        <div class="shop_name">
+                            店铺：<a href="javascript:;">卷卷旗舰店</a>
+                        </div>
+                    </div>
+                    <div class="order_content">
+                        <%for(i=1;i<list.length; i++){%>
+                        <ul class="order_lists">
+                            <li class="list_chk">
+                                <input type="checkbox" id="checkbox_<%=list[i].id%>" class="son_check">
+                                <label for="checkbox_<%=list[i].id%>"></label>
+                            </li>
+                            <li class="list_con">
+                                <div class="list_img"><a href="javascript:;"><img src="<%=list[i].src%>" alt=""></a></div>
+                                <div class="list_text"><a href="javascript:;"><%=list[i].title%></a></div>
+                            </li>
+                            <li class="list_info">
+                                <p>颜色：<%=list[i].color%></p>
+                                <p>尺码：<%=list[i].size%></p>
+                            </li>
+                            <li class="list_price">
+                                <p class="price">￥<%=list[i].money%></p>
+                            </li>
+                            <li class="list_amount" style="padding-top:20px;">
+                                <div class="amount_box">
+                                    <a href="javascript:;" class="reduce reSty">-</a>
+                                    <input type="text" value="<%=list[i].num%>" class="sum">
+                                    <a href="javascript:;" class="plus">+</a>
+                                </div>
+                            </li>
+                            <li class="list_sum">
+                                <p class="sum_price">￥<%=list[i].sum_money%></p>
+                            </li>
+                            <li class="list_op">
+                                <p class="del"><a href="javascript:;" class="delBtn">移除商品</a></p>
+                            </li>
+                        </ul>
+                        <%}%>
+                    </div>
+                </div>
+                
+                <div class="bar-wrapper">
+                    <div class="bar-right">
+                        <div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
+                        <div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
+                        <div class="calBtn"><a href="javascript:;">结算</a></div>
+                    </div>
+                </div>
+            </section>
+            <section class="my_model">
+                <p class="title">删除宝贝<span class="closeModel">X</span></p>
+                <p class="qrsc">您确认要删除该宝贝吗？</p>
+                <div class="opBtn"><a href="javascript:;" class="dialog-sure">确定</a><a href="javascript:;" class="dialog-close">关闭</a></div>
+            </section>
+        </div>
+    </script>
+
+    <script>
+        var arr = JSON.parse($.cookie('shop_list'));
+        console.log(arr);
+        var tempstr = template("shop_list_model",{list:arr});
+        $("#shop_list_container").html(tempstr);
+        
+    </script>
+    <script src="../../js/cart/cart.js"></script>
+    <script src="../../js/cart/carts.js"></script> 
+</body>
+</html>

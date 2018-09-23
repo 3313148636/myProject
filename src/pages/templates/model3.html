@@ -1,3 +1,50 @@
-<script type="text/html">
-
+<!-- 刷新首部登录模块 -->
+<script type="text/html" id="model3">
+    <%if(data == 1){%>
+    <div class="col-xs-4">
+        <ul>
+            <li class="li1"><a href="#"><span>QQ登录</span></a></li>
+            <li class="li2"><a href="#"><span>淘宝登录</span></a></li>
+            <li class="li3"><a href="#"><span>微博登录</span></a></li>
+        </ul>
+        <span id="_header_span"><a href="http://localhost:8080/pages/regist/regist.html">请登录</a></span>
+        <span id="_header_span_"><a href="http://localhost:8080/pages/login/login.html">免费注册</a></span>
+    </div><%}else{%>
+    <div class="col-xs-4">
+        <p>
+            <span>您好，</span>
+            <a href="#" class="span1"><span><%=data%></span></a>
+            <a href="#" class="span2"><span></span></a>
+            <a href="javascript:void(0)" class="span3" id="logout"><span>退出</span></a>
+        </p>
+    </div>
+    <%}%>
+    <div class="col-xs-6 col-xs-offset-2">
+        <span><a href="#">我的米折</a></span>
+        <span><a href="#">我的订单</a></span>
+        <span><a href="#">消息</a></span>
+        <span><a href="#">帮助中心</a></span>
+        <span><a href="#">联系客服</a></span>
+        <span class="_span1"><a href="#">手机米折</a></span>
+        <div id="notice_container">
+            <span class="_span2" id="notice">
+                <a href="#">关注</a>
+            </span>
+            <div class="watch-wrap" id="watch-wrap">
+                <div class="weixin-wrap">
+                    <a style="line-height:1;color:#999" href="javascript:" hidefocus="true">
+                        <img src="http://s0.husor.cn/image/index/qrcode_app.jpg">
+                        <p>米折官方微信号</p>
+                        <p>mizhewang</p>
+                    </a>
+                </div>
+                <div class="right-part">
+                    <a href="http://weibo.com/mizhewang" target="_blank" hidefocus="true"><img src="http://s0.husor.cn/image/index/weibo_icon.png"></a>
+                    <p>官方微博</p>
+                    <a href="http://user.qzone.qq.com/2253242148" target="_blank" hidefocus="true"><img src="http://s0.husor.cn/image/index/qqzone.png"></a>
+                    <p>QQ空间</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </script>

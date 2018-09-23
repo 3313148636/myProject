@@ -1,0 +1,21 @@
+.zoomy{
+    position: absolute;
+    display: none;
+    background-repeat: no-repeat;
+    -webkit-box-shadow: 3px 3px 10px #000;
+    -moz-box-shadow: 3px 3px 10px #000;
+    border: 0;
+    line-height: 100px;
+    text-align: center;
+    background-position: center;
+    background-color: #fff;
+    z-index: 1000;
+    width: 500px;
+    height: 500px;
+}
+
+.zoomy img{
+    opacity: 0;
+    filter:alpha(opacity=0);
+}
+

@@ -29,7 +29,7 @@
             }
             .li1{
                 border:1px solid #F4F4F4;
-                background: url(http://s0.husor.cn/image/index/icons1.png) no-repeat -16px -646px;
+                background: #f4f4f4 url(http://s0.husor.cn/image/index/icons1.png) no-repeat -16px -646px;
             }
             .li1_1{
                 border:1px solid #C1C1C1;
@@ -81,6 +81,20 @@
                 padding-right:45px;
                 padding-top:2px;
                 background: url(http://s0.mizhe.cn/image/index/reg-reward-icon.png) no-repeat right center;
+            }
+        }
+        p{
+            font-size: 12px;
+            margin: 0;
+            line-height: 28px;
+            .span1,.span3{
+                text-decoration: none;
+                color: #444;
+            }
+            .span2 span{
+                background: url("http://s0.husor.cn/image/icons/grade.png") no-repeat left center;
+                display: inline-block;
+                padding: 5px 8px;
             }
         }
     }
@@ -193,6 +207,9 @@
             }
             .nav_li1{
                 background:#DD4400;
+                &:hover{
+                    @include opacity(100);
+                }
             }
             .nav_li2{
                 float: right;
@@ -391,7 +408,7 @@
             background: #FAFAFA;
             padding-right:0;
             padding-left:0;
-            margin-left:20px;  
+            margin-left:15px;  
             text-align: center;
             a{
                 text-decoration: none;
@@ -415,6 +432,35 @@
                     line-height: 36px;
                     font-size: 12px;
                     margin: 10px auto;
+                }
+                i{
+                    display: block;
+                    width: 110px;
+                    height: 30px;
+                    line-height: 30px;
+                    border-radius: 3px;
+                    margin-left: 20px;
+                    font-style: normal;
+                }
+                .reg-box_1{
+                    background-color: #99CC00;
+                    margin-top: 30px;
+                    color: #fff;
+                    font-size: 16px;
+                    font-family: Microsoft YaHei;
+                }
+                .reg-box_2{
+                    font-size: 12px;
+                    margin-top: 15px;
+                    margin-bottom: 20px;
+                    padding-left: 11px;
+                    color: #bbb;
+                    line-height: 32px;
+                    background: url(http://s0.husor.cn/image/index/icons1.png) no-repeat -21px -84px;
+                    &:hover{
+                        background: url(http://s0.husor.cn/image/index/icons1.png) no-repeat -248px -703px;
+                        color: #fff;
+                    }
                 }
             }
             .law-box{
@@ -763,13 +809,14 @@
     height: 68px;
     position: fixed;
     left: 1190px;
-    top: 520px;
+    bottom: 20px;
     .go-top-btn{
         text-decoration: none;
         .go-top{
             width: 68px;
             height: 68px;
             border-radius: 50%;
+            cursor: pointer;
             background: url(http://s0.husor.cn/image/index/icons1.png) no-repeat -17px -433px;
             &:hover{
                 background: url(http://s0.husor.cn/image/index/icons1.png) no-repeat -98px -433px;

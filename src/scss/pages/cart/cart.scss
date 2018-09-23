@@ -1,0 +1,280 @@
+@import "../../mixins/mixin.scss";
+#_header_top{
+    background:#F4F4F4;
+    height:27px;
+    width:1010px;
+    margin: 0 auto;
+    .col-xs-4{
+        height:27px; 
+        padding-left: 5px;
+        ul{
+            float: left;
+            position: relative;
+            width: 92px;
+            @include margin_padding;
+            li{
+                list-style: none;
+                padding-top: 2px;
+                padding-left: 20px;
+                padding-bottom: 4px;
+                a{
+                    color: #666;
+                    font-size: 12px;
+                    padding-right:10px;
+                    text-decoration: none;
+                    span{
+                        padding: 0 7px 0 5px;
+                    }
+                }
+            }
+            .li1{
+                border:1px solid #F4F4F4;
+                background: url(http://s0.husor.cn/image/index/icons1.png) no-repeat -16px -646px;
+            }
+            .li1_1{
+                border:1px solid #C1C1C1;
+                border-bottom: none;
+                background: #fafafa url(http://s0.husor.cn/image/index/icons1.png) no-repeat -16px -646px;
+            }
+            .li2{
+                background: url(http://s0.husor.cn/image/index/icons1.png) no-repeat -16px -685px;
+                top: 27px;
+                z-index: 5;
+                position: absolute;
+                border-left:1px solid #C1C1C1;
+                border-right:1px solid #C1C1C1;
+                background-color: #fafafa;
+                padding-bottom:4px; 
+                display: none; 
+            }
+            .li3{
+                background: url(http://s0.husor.cn/image/index/icons1.png) no-repeat -16px -721px;                
+                top: 53px;
+                z-index: 5;
+                position: absolute;
+                border-left:1px solid #C1C1C1;
+                border-right:1px solid #C1C1C1;
+                border-bottom:1px solid #C1C1C1;
+                background-color: #fafafa;
+                padding-bottom:4px;  
+                display: none; 
+            }
+        }
+        #_header_span{
+            border-left:1px solid #ccc;
+            margin-left: 20px;
+            a{
+                display: inline-block;
+                margin-top:6px;
+                padding-left: 11px;
+                padding-right: 18px;
+                color: #666;
+                font-size: 12px;
+                text-decoration: none;
+            }
+        }
+        #_header_span_{
+            a{
+                color: #FF6600;
+                text-decoration: none;
+                font-size: 12px;
+                padding-right:45px;
+                padding-top:2px;
+                background: url(http://s0.mizhe.cn/image/index/reg-reward-icon.png) no-repeat right center;
+            }
+        }
+        p{
+            font-size: 12px;
+            margin: 0;
+            line-height: 28px;
+            .span1,.span3{
+                text-decoration: none;
+                color: #444;
+            }
+            .span2 span{
+                background: url("http://s0.husor.cn/image/icons/grade.png") no-repeat left center;
+                display: inline-block;
+                padding: 5px 8px;
+            }
+        }
+    }
+    .col-xs-6{
+        height:24px;
+        padding-top:3px;
+        padding-right: 0;
+        position: relative;
+        span{
+            border-right:1px solid #CCC;
+        }
+        a{
+            text-decoration: none;
+            color: #666;
+            font-size: 12px;
+            padding-right: 10px;
+            padding-left:10px;
+        }
+        ._span1{
+            background: url("http://s0.mizhe.cn/image/index/shouji3.jpg") no-repeat 7px -3px;            
+            a{
+                padding-left: 20px;
+            }
+        }
+        #notice_container{
+            position: relative;
+            top: -24px;
+            min-height: 30px;
+            width: 71px;
+            float: right;
+            ._span2{
+                background: url(http://s0.husor.cn/image/index/icons1.png) no-repeat -56px -647px;
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 0;
+                padding: 2px 23px 4px 0px;
+                border: 1px solid #F4F4F4;
+                border-bottom: none;
+                z-index: 2;
+            }
+            #watch-wrap{
+                display: none;
+                position: absolute;
+                top: 26px;
+                right: 0px;
+                width:168px;
+                height:148px;
+                overflow: hidden;
+                border: 1px solid #ccc;
+                background-color: #fafafa;
+                z-index: 1;
+                .weixin-wrap{
+                    float: left;
+                    height: 130px;
+                    width: 100px;
+                    overflow: hidden;
+                    margin-top: 10px;
+                    border-right: 1px solid #eee;
+                    text-align: center;
+                    padding-right: 8px;
+                    img{
+                        width: 80px;
+                        height: 80px;
+                        margin-bottom: 7px;
+                    }
+                }
+                .right-part{
+                    float: right;
+                    padding-top: 10px;
+                }
+            }
+        }
+    }
+}
+#_header_bottom{
+    height:95px;
+    width:1010px;
+    margin:0 auto;
+    .col-xs-4{
+        padding-left: 0;
+    }
+}
+#nav{
+    height:40px;
+    background: #FF6600;
+    padding: 0;
+    margin: 0;
+    .col-xs-12{ 
+        ul{
+            width:1010px;
+            background: #FF6600;
+            margin: 0 auto;
+            list-style: none;
+            padding-left:0;
+            overflow: hidden;
+            li{
+                line-height: 40px;
+                padding: 0 16px 0 16px;
+                float: left;
+                &:hover{
+                    background:#DD4400;
+                    @include opacity(50);
+                }
+                a{
+                    color: #fff;
+                    font-size: 14px;
+                    text-decoration: none;
+                }
+            }
+            .nav_li1{
+                background:#DD4400;
+            }
+            .nav_li2{
+                float: right;
+            }
+        }
+    }
+}
+#shop_list_container{
+    background: url(http://s0.husor.cn/image/bg.png) #f1efeb;
+    overflow: hidden;
+    #myCart{
+        background-color: #FAFAFA;
+        width: 1010px;
+        margin: 20px auto 0;
+        line-height: 70px;
+        position: relative;
+        p{
+            margin: 0 0 0 30px;
+            line-height: 70px;
+            color: #a7a7a7;
+            text-shadow: 0 -1px 0 #fff;
+            font-size: 24px;
+        }
+        i{
+            position: absolute;
+            top: 0;
+            right: 30px;
+            width: 340px;
+            height: 70px;
+            display: inline-block;
+            background: url(http://b0.hucdn.com/img/trade/cart_merge.png) no-repeat left -86px;
+        }
+    }
+    #shop_list{
+        margin: 0 auto 30px;
+        width: 1010px;
+        background: #FEFEFE;
+    }
+}
+.footer-container{
+    overflow: hidden;
+    .wrapper{
+        width: 1010px;
+        margin: 15px auto 0;
+        text-align: center;
+        .footer-nav{
+            a{
+                text-decoration: none;
+                color: #444;
+                padding: 0 5px;
+            }
+        }
+        .cert{
+            margin-top: 5px;
+            a{
+                margin-right: 9px;
+                img{
+                    height: 41px;
+                }
+            }
+        }
+        .copyright{
+            color: #555;
+            margin-top: 10px;
+            a{
+                color: #555;
+                text-decoration: none;
+            }
+        }
+    }
+}
